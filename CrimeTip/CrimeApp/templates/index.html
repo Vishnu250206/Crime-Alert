@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+  <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="static/css/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/slick.css" />
+  <link href="static/css/tooplate-little-fashion.css" rel="stylesheet" />
+  <link href="static/css/style.css" rel="stylesheet" />
+  <style type="text/css">
+    .logo-text {
+      color: #000;
+      font-family: Roboto;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44px;
+    }
+
+    .home-text,
+    .text-heading {
+      color: #000;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+    }
+
+    .navbar {
+      padding-right: 30px; /* Adjust right padding to move navbar to the right */
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin-left: 20px; /* Adjust spacing between navbar items */
+    }
+
+    .nav-link {
+      color: black; /* Set default color for navbar links */
+    }
+
+    .nav-link.active {
+      color: red; /* Set color for active navbar link */
+    }
+
+    .sign-up-btn {
+      margin-left: auto; /* Move sign-up button to the right */
+    }
+  </style>
+  <title>Crime Alert</title>
+</head>
+
+<body>
+  <main>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">
+          <img src="static/images/logo.png" class="img-fluid" alt="" />
+          <span class="logo-text">CrimeAlert</span>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'UserLogin' %}">Anonymous Tip Submit</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'AuthorityLogin' %}">Authority Login Here</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'UserLogin' %}">Contact Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'UserLogin' %}">Feedback</a>
+            </li>
+          </ul>
+
+          <div class="sign-up-btn">
+            <a href="{% url 'Register' %}" class="custom-icon me-3">
+              <button type="button" class="btn btn-secondary">Sign Up</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    <section class="slick-slideshow">
+      <div class="slick-custom">
+        <img src="static/images/BG-Image-2.png" class="img-fluid" alt="" />
+      </div>
+    </section>
+
+    <section class="contact section-padding section2" style="background-color: white;">
+      <div class="container mt-3 card p-5" style="background-color: white;">
+        <h5 class="d-flex">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="72" height="3" viewBox="0 0 72 3" fill="none">
+              <path d="M0 1.50006H72" stroke="#1D2130" stroke-width="2" />
+            </svg></span><span>Thinking about Your Safety?</span>
+        </h5>
+    
+        <div class="row">
+          <div class="col-8">
+            <p class="home-text">
+              We understand that you may have concerns about your safety or
+              fear of retaliation when reporting suspicious activities.
+              Reporting anonymously ensures:
+            </p>
+            <p class="home-text">
+              Your identity remains confidential. You can contribute to a
+              safer community without fear. Authorities can take action while
+              protecting your privacy.
+            </p>
+    
+            <div>
+              <h6>How It Works:</h6>
+              <p class="home-text">
+                1. <span class="text-heading">Submit a Report:</span> Provide
+                details about the suspicious activity or crime you've
+                observed. You can include text descriptions, images, videos,
+                or audio recordings as evidence.
+              </p>
+              <p class="home-text">
+                2. <span class="text-heading">Stay Anonymous: </span>We use
+                advanced technology to protect your identity. Your personal
+                information is never shared with authorities.
+              </p>
+              <p class="home-text">
+                3. <span class="text-heading">Help Your Community: </span>Your
+                report can assist law enforcement agencies in preventing
+                crimes and maintaining community safety.
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-4">
+            <img src="static/images/image-2.PNG" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact section-padding section2">
+      <div class="container mt-3 card p-5">
+        <h5 class="d-flex">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="72" height="3" viewBox="0 0 72 3" fill="none">
+              <path d="M0 1.50006H72" stroke="#1D2130" stroke-width="2" />
+            </svg></span><span>Look at our Successful story </span>
+        </h5>
+    
+        <div class="row">
+          <div class="col-8">
+            <p class="home-text">
+              In a remarkable demonstration of community involvement and the Anonymous Crime Reporting System's effectiveness, we present the story of how a recent chain snatching crime was swiftly solved in India, thanks to the vigilant efforts of a concerned citizen who used our platform to report the incident anonymously.
+              In the bustling streets of Mumbai, chain snatching incidents had been on the rise, leaving residents feeling vulnerable while going about their daily lives. The culprits operated with audacity, often targeting unsuspecting victims in broad daylight.
+            </p>
+            <p class="home-text">
+              One courageous individual, who wished to protect their identity, decided to take action. They utilized the Anonymous Crime Reporting System, providing critical information about a recent chain snatching incident they had witnessed. The report included:
+
+            </p>
+    
+            <div>
+              <h6>You need to Submit:</h6>
+              <p class="home-text">
+                1. <span class="text-heading"></span> A detailed description of the assailant.
+              </p>
+              <p class="home-text">
+                2. <span class="text-heading"></span>The precise location and time of the incident.
+              </p>
+              <p class="home-text">
+                3. <span class="text-heading">A brief account of the victim's description.
+              </p>
+              <p class="home-text">
+                4. <span class="text-heading">Additional information about the getaway vehicle used by the criminal.
+            </div>
+            <h6>Thanks to the collective efforts of law enforcement and the anonymous tipster, chain snatching incidents in Mumbai have seen a significant decline. The community can now walk the streets with greater confidence and security.</h6>
+          </div>
+          
+          <div class="col-4">
+            <img src="static/images/chain Snaching.jpg" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+  </main>
+  {% endblock %}
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-10 me-auto mb-4">
+          <img src="static/images/logo.png" class="img-fluid mb-3" alt="CrimeAlert Logo" />
+          <p class="copyright-text text-muted mb-4">
+            Copyright © 2022 <strong>CrimeAlert</strong>
+          </p>
+          <h5 class="text-white mb-3">REACH US</h5>
+          <p class="text-white mb-1">Telephone: 1234567890</p>
+          <p class="text-white mb-1">Fax: (011) 26782257</p>
+          <p class="text-white mb-1">Email: crimealert@gmail.com</p>
+        </div>
+  
+        <div class="col-lg-5 col-8">
+          <ul class="footer-menu d-flex flex-wrap">
+            <li class="footer-menu-item">
+              <a href="index.html" class="footer-menu-link">Home</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Submit Tip</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Feedback</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">About Us</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Our Services</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">FAQ</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">CrimeAlert- Anonymous Crime Reporting System</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Privacy Policy</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Terms of Service</a>
+            </li>
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-3 col-4">
+          <h5 class="text-white mb-3">Connect Us</h5>
+          <ul class="social-icon">
+            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <!-- JAVASCRIPT FILES -->
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/Headroom.js"></script>
+  <script src="static/js/jQuery.headroom.js"></script>
+  <script src="static/js/slick.min.js"></script>
+  <script src="static/js/custom.js"></script>
+</body>
+
+</html>

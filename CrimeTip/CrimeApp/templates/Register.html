@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Registration - CrimeAlert</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/slick.css" />
+    <link href="static/css/tooplate-little-fashion.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            align-items: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: red;
+        }
+
+        .sign-up-btn {
+            margin-left: 20px;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #B72EA9;
+            color: white;
+            border-radius: 15px 15px 0 0;
+            font-size: 24px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #B72EA9;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #553982;
+        }
+
+        .footer {
+            background-color: #212529;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .footer .footer-menu-item {
+            margin-bottom: 20px;
+        }
+
+        .footer .footer-menu-link {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer .footer-menu-link:hover {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .social-icon {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .social-icon li {
+            margin-right: 10px;
+        }
+
+        .social-icon-link {
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon-link:hover {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/images/logo.png" class="img-fluid" alt="" />
+                <span class="logo-text">CrimeAlert</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link active" href="index.html">Home</a>
+				  </li>
+	  
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'UserLogin' %}">Anonymous Tip Submit</a>
+				  </li>
+	  
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'AuthorityLogin' %}">Authority Login Here</a>
+				  </li>
+	  
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'UserLogin' %}">Contact Us</a>
+				  </li>
+	  
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'UserLogin' %}">Feedback</a>
+				  </li>
+				</ul>
+	  
+				<div class="sign-up-btn">
+				  <a href="{% url 'Register' %}" class="custom-icon me-3">
+					<button type="button" class="btn btn-secondary">Sign Up</button>
+				  </a>
+				</div>
+			  </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">New User Signup Screen</div>
+                    <div class="card-body">
+                        {% if data %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ data }}
+                        </div>
+                        {% endif %}
+                        <form name="f1" method="post" action="{% url 'RegisterAction' %}" onsubmit="return validate(this);">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="t1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="t2" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact" class="form-label">Contact No</label>
+                                <input type="text" class="form-control" id="contact" name="t3" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-control" id="gender" name="t4" required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email ID</label>
+                                <input type="email" class="form-control" id="email" name="t5" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="t6" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/Headroom.js"></script>
+    <script src="static/js/jQuery.headroom.js"></script>
+    <script src="static/js/slick.min.js"></script>
+    <script src="static/js/custom.js"></script>
+</body>
+
+</html>

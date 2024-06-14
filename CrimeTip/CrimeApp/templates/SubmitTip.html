@@ -1,0 +1,57 @@
+{% extends "UserScreen.html" %}
+{% block content %}
+<center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form name="f1" method="post" action={% url 'SubmitTipAction' %} enctype="multipart/form-data"
+		onsubmit="return validate(this);">
+		{% csrf_token %}<br />
+		<h2><b>Tip Submission Screen</b></h2>
+
+		<font size="" color="red">
+			<center>{{ data|safe }}</center>
+		</font>
+
+		<table align="center" width="30%">
+			<tr>
+				<td>
+					<font size='' color=black>Area&nbsp;Name</b>
+				</td>
+				<td><input class="form-control" type="text" name="t1" style="font-family: Comic Sans MS" size="35"></td>
+			</tr>
+
+			<tr>
+				<td>
+					<font size='' color=black>Suspicious&nbsp;Activity&nbsp;Type</b>
+				</td>
+				<td><select name="t2" class="form-control">
+						<option value="Burglary">Burglary</option>
+						<option value="Murder">Murder</option>
+						<option value="Brawl">Brawl</option>
+						<option value="Other">Other</option>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<font size='' color=black>Description</b>
+				</td>
+				<td><input class="form-control" name="t3" type="text" size="40"></td>
+			</tr>
+
+			<tr>
+				<td>
+					<font size='' color=black>Upload&nbsp;Image</b>
+				</td>
+				<td><input class="form-control" name="t4" type="file" size="40"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" class="btn btn-primary" value="Submit"></td>
+		</table>
+	</form>
+</center>
+{% endblock %}

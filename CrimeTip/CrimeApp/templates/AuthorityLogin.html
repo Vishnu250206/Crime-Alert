@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+{% block content %}
+<center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<form name="f1" method="post" action={% url 'AuthorityLoginAction' %} onsubmit="return validate(this);">
+		{% csrf_token %}<br />
+		<h2><b>Authority Login Screen</b></h2>
+
+		<font size="" color="red">
+			<center>{{ data }}</center>
+		</font>
+
+		<table align="center" width="30%">
+			<tr>
+				<td>
+					<font size='' color=black>Username</b>
+				</td>
+				<td><input class="form-control" type="text" name="t1" style="font-family: Comic Sans MS" size="25"></td>
+			</tr>
+
+			<tr>
+				<td>
+					<font size='' color=black>Password</b>
+				</td>
+				<td><input class="form-control" name="t2" type="password" size="25"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input class="btn btn-primary" type="submit" value="Login"></td>
+		</table>
+	</form>
+</center>
+<script language="javascript">
+	function validate(formObj) {
+		if (formObj.t1.value.length == 0) {
+			alert("Please Enter Username");
+			formObj.t1.focus();
+			return false;
+		}
+		if (formObj.t2.value.length == 0) {
+			alert("Please Enter Password");
+			formObj.t2.focus();
+			return false;
+		}
+		formObj.actionUpdateData.value = "update";
+		return true;
+	}
+</script>
+{% endblock %}

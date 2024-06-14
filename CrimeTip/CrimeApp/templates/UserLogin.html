@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #FCEDC6; /* Default background color */
+    }
+
+    .card {
+		margin-top: 50px;
+		border-radius: 10px; /* Curved edges for all corners */
+		box-shadow: 0px 0px 00px 0px rgba(0, 0, 0, 0.1);
+	  }
+	  
+	  .card-header {
+		background-color: #B72EA9; /* Purple color for header */
+		color: white;
+		border-radius: 30px 30px 0 0; /* Curved edges for top corners */
+	  }
+	  
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #B72EA9; /* Purple color for button */
+      border: none;
+      border-radius: 10px;
+    }
+
+    .btn-primary:hover {
+      background-color: #9c288b; /* Darker shade of purple for hover */
+    }
+    
+    .logo {
+      width: 80px; /* Adjust logo width */
+      height: auto;
+      margin-bottom: 20px; /* Add margin for spacing */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>User Login</h2>
+          </div>
+          <div class="card-body">
+            <img src="static/images/userloginlogo.png" alt="Logo" class="logo mx-auto d-block">
+            {% if data %}
+            <div class="alert alert-danger" role="alert">
+              {{ data }}
+            </div>
+            {% endif %}
+            <form name="f1" method="post" action="{% url 'UserLoginAction' %}" onsubmit="return validate(this);">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="t1" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="t2" required>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function validate(formObj) {
+      if (formObj.t1.value.length == 0) {
+        alert("Please Enter Username");
+        formObj.t1.focus();
+        return false;
+      }
+      if (formObj.t2.value.length == 0) {
+        alert("Please Enter Password");
+        formObj.t2.focus();
+        return false;
+      }
+      formObj.actionUpdateData.value = "update";
+      return true;
+    }
+  </script>
+</body>
+
+</html>

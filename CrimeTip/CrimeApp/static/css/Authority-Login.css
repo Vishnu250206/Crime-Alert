@@ -1,0 +1,101 @@
+ .u-section-1 {
+  background-image:  url("static\images\pngegg2.png"), linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  background-position: 50% 0%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 809px;
+}
+
+.u-section-1 .u-group-1 {
+  width: 588px;
+  min-height: 673px;
+  height: auto;
+  --radius: 16px;
+  margin: 69px auto 60px;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 0 20px;
+}
+
+.u-section-1 .u-icon-1 {
+  width: 108px;
+  height: 108px;
+  background-image: none;
+  margin: 28px auto 0;
+  padding: 22px;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: 700;
+  font-size: 1.875rem;
+  margin: 2px auto 0;
+}
+
+.u-section-1 .u-form-1 {
+  height: 371px;
+  background-image: none;
+  --radius: 12px;
+  width: 442px;
+  margin: 28px auto 0;
+}
+
+.u-section-1 .u-input-1 {
+  background-image: none;
+  --radius: 11px;
+}
+
+.u-section-1 .u-input-2 {
+  background-image: none;
+  --radius: 11px;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+  border-style: none;
+  --radius: 11px;
+  padding: 10px 42px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1095px;
+  }
+
+  .u-section-1 .u-group-1 {
+    height: auto;
+  }
+
+  .u-section-1 .u-btn-1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-group-1 {
+    width: 340px;
+    margin-top: 105px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 1.5rem;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 320px;
+  }
+}

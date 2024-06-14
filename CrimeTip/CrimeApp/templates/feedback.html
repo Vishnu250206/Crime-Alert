@@ -1,0 +1,26 @@
+{% extends "UserScreen.html" %}
+{% block content %}
+<!-- Page Content -->
+<section class="contact section-padding">
+  <div class="d-flex justify-content-center">
+    <div class="container w-75 card p-4">
+      <form class="row g-3" action="{% url 'feedback' %}" method="post">
+        {% csrf_token %}
+        <div class="col-12">
+          <h2 class=""><span>Feedback</span></h2>
+        </div>
+
+
+
+        <div class="col-md-12">
+          <label for="inputMessage" class="form-label">Message</label>
+          <textarea name="message" class="form-control" id="inputMessage" placeholder="Enter Message" required></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submt</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

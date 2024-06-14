@@ -1,0 +1,31 @@
+{% extends "Info.html" %}
+{% block content %}
+
+<center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="card" style="overflow: scroll;">
+            <div class="card" style="width: 72rem;">
+
+                <div class="card-body">
+                    {% for feed in all_feeds %}
+                    <h5 class="card-text">{{feed.message}}</h5>
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}
