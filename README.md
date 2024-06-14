@@ -7,7 +7,7 @@ The **Crime-Alert** System is an IT-enabled framework designed to empower indivi
 Screenshots of the project's execution steps are as follows:
 
 - Screenshot1:**HomePage**
-  - This screenshot shows the homepage of the **CrimeAlert** application ![Screenshot1](https://github.com/Vishnu250206/Crime-Alert/blob/main/Screens/Authority%20Homepage.jpg)
+  - This screenshot shows the homepage of the **CrimeAlert** application ![Screenshot1](https://github.com/Vishnu250206/Crime-Alert/blob/main/Screens/Homepage.jpg)
 - Screenshot2: **SignUp Process**
   - In above screen click on ‘Signup Here’ link to get below page.In this screen user is entering sign up details and then press button to get Registered.
  ![Screenshot2](https://github.com/Vishnu250206/Crime-Alert/blob/main/Screens/User%20SIgnup.jpg)
